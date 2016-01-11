@@ -1,0 +1,231 @@
+﻿
+    <UserControl
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="SW_Membership_Assignment2_UI.board" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1600"
+	 FontSize="14" Background="{x:Null}" AllowDrop="False">
+
+    	<UserControl.Resources>
+    		<Style x:Key="MenuStryle" TargetType="{x:Type Button}">
+    			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    			<Setter Property="BorderThickness" Value="1"/>
+    			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+    			<Setter Property="VerticalContentAlignment" Value="Center"/>
+    			<Setter Property="Padding" Value="1"/>
+    			<Setter Property="Template">
+    				<Setter.Value>
+    					<ControlTemplate TargetType="{x:Type Button}">
+    						<Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+    							<Rectangle x:Name="ButtonBackground" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192">
+    								
+    							</Rectangle>
+    							<Label Content="공지사항" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+    						</Grid>
+    						<ControlTemplate.Triggers>
+    							<Trigger Property="IsKeyboardFocused" Value="true"/>
+    							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+    							<Trigger Property="IsMouseOver" Value="True">
+    								<Setter Property="Foreground" Value="#ADADAD"/>
+    								<Setter Property="Fill" TargetName="ButtonBackground" Value="Gainsboro"/>
+    							</Trigger>
+    						</ControlTemplate.Triggers>
+    					</ControlTemplate>
+    				</Setter.Value>
+    			</Setter>
+    		</Style>
+
+			<Style x:Key="MenuStryleEdu" TargetType="{x:Type Button}">
+    			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    			<Setter Property="BorderThickness" Value="1"/>
+    			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+    			<Setter Property="VerticalContentAlignment" Value="Center"/>
+    			<Setter Property="Padding" Value="1"/>
+    			<Setter Property="Template">
+    				<Setter.Value>
+    					<ControlTemplate TargetType="{x:Type Button}">
+    						<Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+    							<Rectangle x:Name="ButtonBackground2" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+    							<Label Content="교육" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+    						</Grid>
+    						<ControlTemplate.Triggers>
+    							<Trigger Property="IsKeyboardFocused" Value="true"/>
+    							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+    							<Trigger Property="IsMouseOver" Value="True">
+    								<Setter Property="Foreground" Value="#ADADAD"/>
+    								<Setter Property="Fill" TargetName="ButtonBackground2" Value="Gainsboro"/>
+    							</Trigger>
+    						</ControlTemplate.Triggers>
+    					</ControlTemplate>
+    				</Setter.Value>
+    			</Setter>
+    		</Style>
+
+			<Style x:Key="MenuStryleAssignment" TargetType="{x:Type Button}">
+    			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    			<Setter Property="BorderThickness" Value="1"/>
+    			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+    			<Setter Property="VerticalContentAlignment" Value="Center"/>
+    			<Setter Property="Padding" Value="1"/>
+    			<Setter Property="Template">
+    				<Setter.Value>
+    					<ControlTemplate TargetType="{x:Type Button}">
+    						<Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+    							<Rectangle x:Name="ButtonBackground3" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+    							<Label Content="과제" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+    						</Grid>
+    						<ControlTemplate.Triggers>
+    							<Trigger Property="IsKeyboardFocused" Value="true"/>
+    							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+    							<Trigger Property="IsMouseOver" Value="True">
+    								<Setter Property="Foreground" Value="#ADADAD"/>
+    								<Setter Property="Fill" TargetName="ButtonBackground3" Value="Gainsboro"/>
+    							</Trigger>
+    						</ControlTemplate.Triggers>
+    					</ControlTemplate>
+    				</Setter.Value>
+    			</Setter>
+    		</Style>
+
+			<Style x:Key="MenuStryleAll" TargetType="{x:Type Button}">
+    			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    			<Setter Property="BorderThickness" Value="1"/>
+    			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+    			<Setter Property="VerticalContentAlignment" Value="Center"/>
+    			<Setter Property="Padding" Value="1"/>
+    			<Setter Property="Template">
+    				<Setter.Value>
+    					<ControlTemplate TargetType="{x:Type Button}">
+    						<Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+    							<Rectangle x:Name="ButtonBackground4" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+    							<Label Content="전국 커뮤니티" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+    						</Grid>
+    						<ControlTemplate.Triggers>
+    							<Trigger Property="IsKeyboardFocused" Value="true"/>
+    							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+    							<Trigger Property="IsMouseOver" Value="True">
+    								<Setter Property="Foreground" Value="#ADADAD"/>
+    								<Setter Property="Fill" TargetName="ButtonBackground4" Value="Gainsboro"/>
+    							</Trigger>
+    						</ControlTemplate.Triggers>
+    					</ControlTemplate>
+    				</Setter.Value>
+    			</Setter>
+    		</Style>
+
+			<Style x:Key="MenuStryleRegion" TargetType="{x:Type Button}">
+    			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    			<Setter Property="BorderThickness" Value="1"/>
+    			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+    			<Setter Property="VerticalContentAlignment" Value="Center"/>
+    			<Setter Property="Padding" Value="1"/>
+    			<Setter Property="Template">
+    				<Setter.Value>
+    					<ControlTemplate TargetType="{x:Type Button}">
+    						<Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+    							<Rectangle x:Name="ButtonBackground5" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+    							<Label Content="지역 커뮤니티" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+    						</Grid>
+    						<ControlTemplate.Triggers>
+    							<Trigger Property="IsKeyboardFocused" Value="true"/>
+    							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+    							<Trigger Property="IsMouseOver" Value="True">
+    								<Setter Property="Foreground" Value="#ADADAD"/>
+    								<Setter Property="Fill" TargetName="ButtonBackground5" Value="Gainsboro"/>
+    							</Trigger>
+    						</ControlTemplate.Triggers>
+    					</ControlTemplate>
+    				</Setter.Value>
+    			</Setter>
+    		</Style>
+
+			<Style x:Key="MenuStryleGuital" TargetType="{x:Type Button}">
+    			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    			<Setter Property="BorderThickness" Value="1"/>
+    			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+    			<Setter Property="VerticalContentAlignment" Value="Center"/>
+    			<Setter Property="Padding" Value="1"/>
+    			<Setter Property="Template">
+    				<Setter.Value>
+    					<ControlTemplate TargetType="{x:Type Button}">
+    						<Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+    							<Rectangle x:Name="ButtonBackground6" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+    							<Label Content="기타" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+    						</Grid>
+    						<ControlTemplate.Triggers>
+    							<Trigger Property="IsKeyboardFocused" Value="true"/>
+    							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+    							<Trigger Property="IsMouseOver" Value="True">
+    								<Setter Property="Foreground" Value="#ADADAD"/>
+    								<Setter Property="Fill" TargetName="ButtonBackground6" Value="Gainsboro"/>
+    							</Trigger>
+    						</ControlTemplate.Triggers>
+    					</ControlTemplate>
+    				</Setter.Value>
+    			</Setter>
+    		</Style> 
+    	</UserControl.Resources> 
+
+    	<Canvas Background="#FFF2F2F2" Height="800" Width="1600">
+         
+
+
+    		<Label Background="#FF300000"  Content="Label" Height="52" HorizontalAlignment="Stretch" x:Name="label3" VerticalAlignment="Top" Width="1600"  />
+    		<Label Background="#FFAD0500"    Height="12" HorizontalAlignment="Stretch" x:Name="label4" VerticalAlignment="Top" Canvas.Top="49" Width="1600"  />
+    		<Button Content="공지사항"  Height="42" HorizontalAlignment="Left" x:Name="button4" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" FontStretch="Expanded" VerticalContentAlignment="Center" Canvas.Left="41" Canvas.Top="144" Style="{DynamicResource MenuStryle}" >
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="12" Opacity="0.35" BlurRadius="12"/>
+    			</Button.Effect>
+    		</Button>
+    		<Button Content="교육"  Height="39" HorizontalAlignment="Left" x:Name="button5" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" Canvas.Left="41" Canvas.Top="183"  Style="{DynamicResource MenuStryleEdu}" >
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="12" Opacity="0.35" BlurRadius="12"/>
+    			</Button.Effect>
+    		</Button>
+    		<Button Content="과제"  Height="41" HorizontalAlignment="Left" x:Name="button6" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" Click="button6_Click" Canvas.Left="41" Canvas.Top="220"  Style="{DynamicResource MenuStryleAssignment}" >
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="12" Opacity="0.35" BlurRadius="12"/>
+    			</Button.Effect>
+    		</Button>
+    		<Button Content="전국커뮤니티"  Height="45" HorizontalAlignment="Left" x:Name="button7" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" Canvas.Left="41" Canvas.Top="260"  Style="{DynamicResource MenuStryleAll}" >
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="12" Opacity="0.35" BlurRadius="12"/>
+    			</Button.Effect>
+    		</Button>
+    		<Button Content="지역커뮤니티"  Height="41" HorizontalAlignment="Left" x:Name="button1" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" Canvas.Left="41" Canvas.Top="300"  Style="{DynamicResource MenuStryleRegion}" >
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="12" Opacity="0.35" BlurRadius="12"/>
+    			</Button.Effect>
+    		</Button>
+    		<Button Content="기타" Grid.Column="0" Grid.Row="0" Height="45" HorizontalAlignment="Left" x:Name="button2" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontWeight="Bold" FontSize="15" Canvas.Left="41" Canvas.Top="340"  Style="{DynamicResource MenuStryleGuital}" >
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="12" Opacity="0.35" BlurRadius="12"/>
+    			</Button.Effect>
+    		</Button>
+    		<Image Height="21" HorizontalAlignment="Left" Margin="23,14,0,0" x:Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="248" Source="/SW_Membership_Assignment2_UI;component/Assignment_picture/secmem_main_title.jpg" />
+        
+
+
+    	</Canvas>
+</UserControl>

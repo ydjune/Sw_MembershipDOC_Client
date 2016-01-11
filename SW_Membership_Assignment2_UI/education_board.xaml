@@ -1,0 +1,812 @@
+﻿<UserControl
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="SW_Membership_Assignment2_UI.education_board"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1600"  Background="#FF300000"
+	 >
+
+    <UserControl.Resources>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#F3F3F3" Offset="0"/>
+            <GradientStop Color="#EBEBEB" Offset="0.5"/>
+            <GradientStop Color="#DDDDDD" Offset="0.5"/>
+            <GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="27.833" VerticalAlignment="Top" Width="60.167" Margin="0,0,-7.167,-4.833">
+                            <Rectangle x:Name="ButtonBackground" HorizontalAlignment="Left" Height="27.833" RadiusY="0" RadiusX="0" Stroke="#FFE1E5E8" StrokeThickness="1" StrokeLineJoin="Round" VerticalAlignment="Top" Width="60.167" Fill="LightSlateGray"/>
+                            <Label x:Name="label" Content="&gt;&gt;" HorizontalAlignment="Center" Height="30.917" Margin="11.833,-5.917,13.333,2.833" VerticalAlignment="Center" Width="35.001" UseLayoutRounding="False" Foreground="White" FontSize="20"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="Black"/>
+                                <Setter Property="Foreground" TargetName="label" Value="#FF464646"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RadiusX" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="RadiusY" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground" Value="#FF333D47"/>
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="#FFD4D9DF"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                <Setter Property="Height" TargetName="ButtonBackground" Value="21.25"/>
+                                <Setter Property="Width" TargetName="ButtonBackground" Value="50.875"/>
+                                <Setter Property="Margin" TargetName="ButtonBackground" Value="1.125,1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="27.833" VerticalAlignment="Top" Width="60.167" Margin="0,0,-7.167,-4.833">
+                            <Rectangle x:Name="ButtonBackground" HorizontalAlignment="Left" Height="27.833" RadiusY="0" RadiusX="0" Stroke="#FFE1E5E8" StrokeThickness="1" StrokeLineJoin="Round" VerticalAlignment="Top" Width="60.167" Fill="LightSlateGray"/>
+                            <Label x:Name="label" Content="&lt;&lt;" HorizontalAlignment="Center" Height="30.917" Margin="11.833,-5.917,13.333,2.833" VerticalAlignment="Center" Width="35.001" UseLayoutRounding="False" Foreground="White" FontSize="20"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="Black"/>
+                                <Setter Property="Foreground" TargetName="label" Value="#FF464646"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RadiusX" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="RadiusY" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground" Value="#FF333D47"/>
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="#FFD4D9DF"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                <Setter Property="Height" TargetName="ButtonBackground" Value="21.25"/>
+                                <Setter Property="Width" TargetName="ButtonBackground" Value="50.875"/>
+                                <Setter Property="Margin" TargetName="ButtonBackground" Value="1.125,1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyleBack" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="27.833" VerticalAlignment="Top" Width="60.167" Margin="0,0,-7.167,-4.833">
+                            <Rectangle x:Name="ButtonBackground" HorizontalAlignment="Left" Height="27.833" RadiusY="0" RadiusX="0" Stroke="#FFE1E5E8" StrokeThickness="1" StrokeLineJoin="Round" VerticalAlignment="Top" Width="60.167" Fill="LightSlateGray"/>
+                            <Label x:Name="label" Content="&lt;" HorizontalAlignment="Center" Height="30.917" Margin="11.833,-5.917,13.333,2.833" VerticalAlignment="Center" Width="35.001" UseLayoutRounding="False" Foreground="White" FontSize="20"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="Black"/>
+                                <Setter Property="Foreground" TargetName="label" Value="#FF464646"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RadiusX" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="RadiusY" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground" Value="#FF333D47"/>
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="#FFD4D9DF"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                <Setter Property="Height" TargetName="ButtonBackground" Value="21.25"/>
+                                <Setter Property="Width" TargetName="ButtonBackground" Value="50.875"/>
+                                <Setter Property="Margin" TargetName="ButtonBackground" Value="1.125,1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyleNext" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="27.833" VerticalAlignment="Top" Width="60.167" Margin="0,0,-7.167,-4.833">
+                            <Rectangle x:Name="ButtonBackground" HorizontalAlignment="Left" Height="27.833" RadiusY="0" RadiusX="0" Stroke="#FFE1E5E8" StrokeThickness="1" StrokeLineJoin="Round" VerticalAlignment="Top" Width="60.167" Fill="LightSlateGray"/>
+                            <Label x:Name="label" Content="&gt;" HorizontalAlignment="Center" Height="30.917" Margin="11.833,-5.917,13.333,2.833" VerticalAlignment="Center" Width="35.001" UseLayoutRounding="False" Foreground="White" FontSize="20"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="Black"/>
+                                <Setter Property="Foreground" TargetName="label" Value="#FF464646"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RadiusX" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="RadiusY" TargetName="ButtonBackground" Value="0"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground" Value="#FF333D47"/>
+                                <Setter Property="Stroke" TargetName="ButtonBackground" Value="#FFD4D9DF"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                <Setter Property="Height" TargetName="ButtonBackground" Value="21.25"/>
+                                <Setter Property="Width" TargetName="ButtonBackground" Value="50.875"/>
+                                <Setter Property="Margin" TargetName="ButtonBackground" Value="1.125,1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="GridButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="24.833" VerticalAlignment="Top" Width="27.25" Margin="5,4.125,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Path x:Name="path" Data="M13.5,0.5 L22.5,0.5 22.5,10.5 36.5,10.5 36.5,19.5 22.5,19.5 22.5,31.5 13.5,31.5 13.5,19.5 0.5,19.5 0.5,10.5 13.5,10.5 z" Fill="LightSlateGray" HorizontalAlignment="Left" Height="25.375" Margin="0,0,0,-0.542" Stretch="Fill" Stroke="#FFE1E5E8" StrokeThickness="1" StrokeLineJoin="Round" VerticalAlignment="Top" Width="27" Grid.RowSpan="2" Grid.ColumnSpan="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True" SourceName="path">
+                                <Setter Property="Fill" TargetName="path" Value="#FF24486C"/>
+                                <Setter Property="Stroke" TargetName="path" Value="#FF98D3FF"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false" SourceName="path">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="path" Value="#FF3E4851"/>
+                                <Setter Property="Height" TargetName="path" Value="20.41"/>
+                                <Setter Property="Width" TargetName="path" Value="22.25"/>
+                                <Setter Property="Margin" TargetName="path" Value="2,2.298,0,0"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="Border" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" SnapsToDevicePixels="True"/>
+                            <Polygon x:Name="Arrow" Fill="Black" HorizontalAlignment="Right" Margin="8,8,3,3" Opacity="0.15" Points="0,10 10,10 10,0" Stretch="Uniform" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Stroke" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Visibility" TargetName="Arrow" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+            <Setter Property="RowBackground" Value="#171717" />
+            <Setter Property="Foreground" Value="#FF999999" />
+            <Setter Property="HorizontalGridLinesBrush" Value="#FF2F2F2F" />
+            <Setter Property="VerticalGridLinesBrush" Value="#FF2F2F2F" />
+            <Setter Property="RowHeight" Value="34" />
+            <Setter Property="ColumnHeaderHeight" Value="34"/>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+            <Setter Property="BorderBrush" Value="#FF2F2F2F"/>
+            <Setter Property="MaxHeight" Value="500"/>
+            <Setter Property="Background" Value="#FF171717"/>
+        </Style>
+        <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+            <Setter Property="Width" Value="8"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="SizeWE"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridColumnHeaderStyle1" TargetType="{x:Type DataGridColumnHeader}">
+
+
+            <Setter Property="Background" Value="#FFEFEFEF"/>
+            <Setter Property="BorderBrush" Value="#FFA7A7A7" />
+            <Setter Property="BorderThickness" Value="0 2 0 1" />
+            <Setter Property="Foreground" Value="#666666"/>
+            <Setter Property="Margin" Value="0,0,20,0"/>
+
+        </Style>
+
+        <Style x:Key="MenuStryle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+                            <Rectangle x:Name="ButtonBackground" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192">
+
+                            </Rectangle>
+                            <Label Content="공지사항" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground" Value="Gainsboro"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuStryleEdu" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+                            <Rectangle x:Name="ButtonBackground2" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+                            <Label Content="교육" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground2" Value="Gainsboro"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuStryleAssignment" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+                            <Rectangle x:Name="ButtonBackground3" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+                            <Label Content="과제" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground3" Value="Gainsboro"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuStryleAll" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+                            <Rectangle x:Name="ButtonBackground4" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+                            <Label Content="전국 커뮤니티" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground4" Value="Gainsboro"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuStryleRegion" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+                            <Rectangle x:Name="ButtonBackground5" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+                            <Label Content="지역 커뮤니티" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground5" Value="Gainsboro"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuStryleGuital" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="192">
+                            <Rectangle x:Name="ButtonBackground6" Fill="White" HorizontalAlignment="Left" Height="42" Stroke="#FFC5C4C6" StrokeThickness="2" VerticalAlignment="Top" Width="192"/>
+                            <Label Content="기타" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.314,5.994,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="ButtonBackground6" Value="Gainsboro"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="btnAssignSubmitStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="91">
+                            <Rectangle x:Name="rectangle" Fill="LightSlateGray" HorizontalAlignment="Left" Height="37" Stroke="#FFE1E5E8" StrokeThickness="1" VerticalAlignment="Top" Width="91"/>
+                            <Label x:Name="label" Content="과제등록" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF15314D"/>
+                                <Setter Property="Stroke" TargetName="rectangle" Value="White"/>
+                                <Setter Property="Foreground" TargetName="label" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="btnSerchStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="70">
+                            <Rectangle x:Name="rectangle" Fill="LightSlateGray" HorizontalAlignment="Left" Height="34" Stroke="#FFC5C4C6" StrokeThickness="1" VerticalAlignment="Top" Width="70"/>
+                            <Label Content="검색" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF20456A"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridColumnHeadSecmemVerStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                        <Grid>
+                            <Themes:DataGridHeaderBorder BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" IsClickable="{TemplateBinding CanUserSort}" IsPressed="{TemplateBinding IsPressed}" IsHovered="{TemplateBinding IsMouseOver}" Padding="{TemplateBinding Padding}" SortDirection="{TemplateBinding SortDirection}" SeparatorBrush="{TemplateBinding SeparatorBrush}" SeparatorVisibility="{TemplateBinding SeparatorVisibility}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Themes:DataGridHeaderBorder>
+                            <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle}"/>
+                            <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+
+
+    <Canvas Background="#FFF2F2F2" Width="1600" Height="800">
+
+        <Label Background="#FF300000" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Label" Height="52" HorizontalAlignment="Stretch" x:Name="label3" VerticalAlignment="Top" Width="1600"  />
+        <Label Background="#FFAD0500" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="12" HorizontalAlignment="Stretch" x:Name="label4" VerticalAlignment="Top" Canvas.Top="49" Width="1600"/>
+        <Button Content="공지사항" Height="42" HorizontalAlignment="Left" Margin="43,144,0,0" x:Name="button4" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" FontStretch="Expanded" VerticalContentAlignment="Center" Style="{DynamicResource MenuStryle}" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.295" ShadowDepth="10" BlurRadius="13"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="교육" Height="42.5" HorizontalAlignment="Left" Margin="43,184,0,0" x:Name="button5" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" Style="{DynamicResource MenuStryleEdu}" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.295" ShadowDepth="10" BlurRadius="13"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="과제" Height="41" HorizontalAlignment="Left" Margin="43,224.5,0,0" x:Name="button6" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold"  Style="{DynamicResource MenuStryleAssignment}" Click="button6_Click" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.295" ShadowDepth="10" BlurRadius="13"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="전국커뮤니티" Height="45" HorizontalAlignment="Left" Margin="43,264.5,0,0" x:Name="button7" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" Style="{DynamicResource MenuStryleAll}" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.295" ShadowDepth="10" BlurRadius="13"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="지역커뮤니티" Height="41" HorizontalAlignment="Left" Margin="43,305,0,0" x:Name="button1" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontSize="15" FontWeight="Bold" Style="{DynamicResource MenuStryleRegion}" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.295" ShadowDepth="10" BlurRadius="13"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="기타" Height="44" HorizontalAlignment="Left" Margin="43,345,0,0" x:Name="button2" VerticalAlignment="Top" Width="192" Background="White" BorderBrush="#FFC5C4C6" FontWeight="Bold" FontSize="15" Style="{DynamicResource MenuStryleGuital}" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.295" ShadowDepth="10" BlurRadius="13"/>
+            </Button.Effect>
+        </Button>
+        <Image Height="21" HorizontalAlignment="Left" Margin="23,14,0,0" x:Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="248" Source="/SW_Membership_Assignment2_UI;component/Assignment_picture/secmem_main_title.jpg" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="299,301,0,0" x:Name="comboBox1" VerticalAlignment="Top" Width="120" />
+        <Label Content="과제게시판 &gt; 과제 DB"  HorizontalAlignment="Left"  Grid.ColumnSpan="3" Height="42" x:Name="label1" VerticalAlignment="Top" Width="1114" Background="White" BorderBrush="#FFC6C4C5" BorderThickness="1" FontSize="15" FontWeight="Bold" VerticalContentAlignment="Center" Canvas.Left="272" Canvas.Top="79" />
+        <Label Height="594.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Left" x:Name="label2" VerticalAlignment="Top" Width="1114" Background="White" BorderBrush="#FFC6C4C5" BorderThickness="1" Canvas.Left="272" Canvas.Top="141" >
+            <Button Content="Button" Height="32.333" Width="37" RenderTransformOrigin="7,13.98" Style="{DynamicResource GridButtonStyle}"/>
+        </Label>
+
+        <Label Content="과제 검색" Height="48" HorizontalAlignment="Left"  x:Name="label5" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Width="144" Canvas.Left="313" Canvas.Top="152.5" />
+        <Label Content="과제명" Height="41" HorizontalAlignment="Left" x:Name="label6" VerticalAlignment="Top" FontSize="16" Canvas.Left="340" Canvas.Top="214.5" />
+        <Label Content="구분" Height="35" HorizontalAlignment="Left" x:Name="label7" VerticalAlignment="Top" FontSize="16" Width="58" UseLayoutRounding="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Canvas.Left="340" Canvas.Top="255.5" />
+        <TextBox Height="29" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" HorizontalAlignment="Left" x:Name="tbQueryMsg" VerticalAlignment="Top" Width="608" Canvas.Left="460" Canvas.Top="215.5" />
+        <ComboBox Height="27" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Left" x:Name="comboBox2" VerticalAlignment="Top" Width="105" Background="White" BorderBrush="#FFC6C4C5" ItemsSource="{Binding}" Canvas.Left="460" Canvas.Top="263.5" />
+        <Button Content="검색" Grid.Column="2" Height="34" HorizontalAlignment="Left"  x:Name="search" VerticalAlignment="Top" Width="70" Background="LightSlateGray" BorderThickness="0" Foreground="White" BorderBrush="{x:Null}" Click="search_Click" Canvas.Left="1094" Canvas.Top="210.5" Style="{DynamicResource btnSerchStyle}"/>
+        <Separator Height="18" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="0" x:Name="separator1" VerticalAlignment="Top" Width="1031" Canvas.Left="313" Canvas.Top="197.5" />
+        <Separator Height="63" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="313,431,0,0" x:Name="separator2" VerticalAlignment="Top" Width="1031" />
+        <Separator Height="35" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="313,488,0,0" x:Name="separator3" VerticalAlignment="Top" Width="1032" />
+        <Separator Height="25" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="0" x:Name="separator4" VerticalAlignment="Top" Width="1032" AllowDrop="False" BorderBrush="#FFA5A4A5" BorderThickness="2" Canvas.Left="313" Canvas.Top="302" />
+
+
+
+
+        <DataGrid x:Name="gridAssignment1" VerticalScrollBarVisibility="Disabled" Grid.ColumnSpan="3" Grid.RowSpan="2" IsReadOnly="True" AutoGenerateColumns="False" Height="350" 
+			HorizontalAlignment="Left" VerticalAlignment="Top" Width="1032" ItemsSource="{Binding}" 
+			CanUserAddRows="False" FontSize="16" BorderBrush="White" Background="White" BorderThickness="0" HorizontalGridLinesBrush="White" 
+			VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontWeight="Normal" 
+			VerticalGridLinesBrush="White"  
+			AllowDrop="False" x:FieldModifier="public" MouseMove="gridAssignment1_MouseMove" Canvas.Left="313" Canvas.Top="334" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"  >
+
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="Control.MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="과제명" Width="550" Binding="{Binding ex_pr_name}" FontSize="16"/>
+                <DataGridTextColumn Header="구분" Width="60" Binding="{Binding ex_pr_type}" FontSize="16"/>
+                <DataGridTextColumn Header="시작일" Width="100" Binding="{Binding ex_start_date}" FontSize="16"/>
+                <DataGridTextColumn Header="종료일" Width="100" Binding="{Binding ex_end_date}" FontSize="16"/>
+                <DataGridTextColumn Header="상태" Width="60" Binding="{Binding ex_is_used, Mode=TwoWay}" FontSize="16"/>
+                <DataGridTemplateColumn Header="요약">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Update" x:Name="btnUpdate"
+                                Click="btnUpdate_Click" Style="{DynamicResource GridButtonStyle}">
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="검색결과">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="search" x:Name="btnSearch"
+                                Click="btnSearch_Click" Style="{DynamicResource GridButtonStyle}">
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+
+        <Popup x:Name="popInformation"  
+			PlacementTarget="{Binding ElementName=imgInformation}"
+			Placement="Mouse"
+			IsOpen="False"
+			Width="400" Height="250"
+			AllowsTransparency="True"
+			StaysOpen="False"
+			PopupAnimation="Fade"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Bottom"
+			HorizontalOffset="-205" VerticalOffset="-250" >
+            <Grid Margin="10">
+                <Path Fill="White" Stretch="Fill" 
+					StrokeThickness="3" StrokeLineJoin="Round"
+					Margin="0" Data="M130,154 L427.5,154 427.5,                               240.5 299.5,240.5 287.5,245.5 275.5,240.5 130,240.5 z" Stroke="#FFC5C4C6">
+                    <Path.Effect>
+                        <DropShadowEffect BlurRadius="12" Color="Black" 
+							Direction="315" Opacity="0.8"/>
+                    </Path.Effect>
+                </Path>
+
+                <Grid Height="225" Margin="10,5,10,5"
+					HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Label Grid.Row="0" FontSize="16" 
+						FontWeight="Bold" Content="과제 목적 및 동기" 
+						HorizontalAlignment="Left" Margin="0,5,5,5"
+						VerticalAlignment="Center"/>
+
+
+                    <Button Grid.Row="0" HorizontalAlignment="Right"
+						Width="25" Click="Button_Click"
+						Height="25" VerticalAlignment="Top" Margin="2">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="bord" CornerRadius="3" 
+									BorderBrush="Transparent" 
+									BorderThickness="2"
+									Background="Transparent" 
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center" 
+									Margin="0" Width="25" Height="25">
+                                    <Label x:Name="lbl" Foreground="Black" FontWeight="Bold" 
+										HorizontalAlignment="Center"
+										VerticalAlignment="Center"
+										FontFamily="Wingdings 2" Content="O"  FontSize="14"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bord" 
+											Property="BorderBrush" Value="Black"/>
+                                        <Setter TargetName="bord" 
+											Property="Background" Value="Black"/>
+                                        <Setter TargetName="lbl" 
+											Property="Foreground" Value="LightGoldenrodYellow"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <ScrollViewer Grid.Row="1" Margin="0,5,0,30"
+						HorizontalScrollBarVisibility="Disabled" 
+						VerticalScrollBarVisibility="Auto">
+                        <TextBlock x:Name="tbMessage"  TextWrapping="Wrap"  FontSize="15" Margin="5"
+							VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                    </ScrollViewer>
+                    <!--="{Binding Path=SearchPathDescription}"-->
+                </Grid>
+            </Grid>
+        </Popup>
+
+        <Popup x:Name="popInformation1"  
+			PlacementTarget="{Binding ElementName=imgInformation}"
+			Placement="Mouse"
+			IsOpen="False"
+			Width="400" Height="250"
+			AllowsTransparency="True"
+			StaysOpen="False"
+			PopupAnimation="Fade"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Bottom"
+			HorizontalOffset="-205" VerticalOffset="-250" >
+            <Grid Margin="10">
+                <Path Fill="White" Stretch="Fill" 
+					StrokeThickness="3" StrokeLineJoin="Round"
+					Margin="0" Data="M130,154 L427.5,154 427.5,                               240.5 299.5,240.5 287.5,245.5 275.5,240.5 130,240.5 z" Stroke="#FFC5C4C6">
+                    <Path.Effect>
+                        <DropShadowEffect BlurRadius="12" Color="Black" 
+							Direction="315" Opacity="0.8"/>
+                    </Path.Effect>
+                </Path>
+
+                <Grid Height="225" Margin="10,5,10,5"
+					HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Label Grid.Row="0" FontSize="16" 
+						FontWeight="Bold" Content="검색 결과" 
+						HorizontalAlignment="Left" Margin="0,5,5,5"
+						VerticalAlignment="Center"/>
+
+
+                    <Button Grid.Row="0" HorizontalAlignment="Right"
+						Width="25" Click="Button1_Click"
+						Height="25" VerticalAlignment="Top" Margin="2">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="bord" CornerRadius="3" 
+									BorderBrush="Transparent" 
+									BorderThickness="2"
+									Background="Transparent" 
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center" 
+									Margin="0" Width="25" Height="25">
+                                    <Label x:Name="lbl" Foreground="Black" FontWeight="Bold" 
+										HorizontalAlignment="Center"
+										VerticalAlignment="Center"
+										FontFamily="Wingdings 2" Content="O"  FontSize="14"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bord" 
+											Property="BorderBrush" Value="Black"/>
+                                        <Setter TargetName="bord" 
+											Property="Background" Value="Black"/>
+                                        <Setter TargetName="lbl" 
+											Property="Foreground" Value="LightGoldenrodYellow"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <ScrollViewer Grid.Row="1" Margin="0,5,0,30"
+						HorizontalScrollBarVisibility="Disabled" 
+						VerticalScrollBarVisibility="Auto">
+                        <TextBlock x:Name="tbMessage1"  TextWrapping="Wrap"  FontSize="15" Margin="5"
+							VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                    </ScrollViewer>
+                    <!--="{Binding Path=SearchPathDescription}"-->
+                </Grid>
+            </Grid>
+        </Popup>
+
+        <Button Content="과제 등록" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="37" x:Name="button3" Width="91" Background="LightSlateGray" BorderThickness="0" Foreground="White" FontSize="14" BorderBrush="{x:Null}" Click="button3_Click" Canvas.Left="773.5" Canvas.Top="684" Style="{DynamicResource btnAssignSubmitStyle}" />
+
+
+        <Button Content="&lt;&lt;" Grid.Row="1" Height="23" x:Name="btnBackFirst" VerticalAlignment="Top" Click="btnBackFirst_Click" HorizontalAlignment="Left" Width="58" Style="{DynamicResource ButtonStyle2}" Canvas.Left="313" Canvas.Top="689" />
+        <Button Content="&lt;" Height="23" HorizontalAlignment="Left" x:Name="btnBack" VerticalAlignment="Top" Width="53" Grid.Row="1" Click="btnBack_Click"  Style="{DynamicResource ButtonStyleBack}" Canvas.Left="377" Canvas.Top="689" />
+        <Button Content="&gt;" Height="23" HorizontalAlignment="Left" x:Name="btnPre" VerticalAlignment="Top" Width="58" Grid.Row="1" Click="btnPre_Click" Grid.Column="1" Style="{DynamicResource ButtonStyleNext}" Canvas.Left="516" Canvas.Top="690.5" />
+        <Button Content="&gt;&gt;" Height="23" HorizontalAlignment="Left" x:Name="btnPreLast" VerticalAlignment="Top" Width="53" Grid.Column="1" Grid.Row="1" Click="btnPreLast_Click" Style="{DynamicResource ButtonStyle1}" Canvas.Left="580" Canvas.Top="690.5" />
+        <Label Height="23.277" HorizontalAlignment="Left" x:Name="lblPageNumber" VerticalAlignment="Bottom" Width="26.63" Content="1" Grid.Row="1" Canvas.Left="442.703" Canvas.Top="690.5" />
+        <Label Content="/" Height="23.277" HorizontalAlignment="Left" x:Name="label8" VerticalAlignment="Bottom" Width="26.63" Grid.Row="1" Canvas.Left="460.675" Canvas.Top="690.458" />
+        <Label Content="1" Height="23.277" HorizontalAlignment="Right" x:Name="lbMaxRowCount" VerticalAlignment="Bottom" Width="26.63" Grid.Row="1" Canvas.Left="476.045" Canvas.Top="689.89" />
+        <Label Content="검색결과 : " Height="48" HorizontalAlignment="Left"  x:Name="label5_Copy" VerticalAlignment="Center" FontSize="20"  Width="144" Canvas.Left="826" Canvas.Top="256" />
+        <Label Content="" Height="48" HorizontalAlignment="Left"  x:Name="lbSerchResult" VerticalAlignment="Center" FontSize="20"  Width="440" Canvas.Left="935" Canvas.Top="256" />
+    </Canvas>
+</UserControl> 
